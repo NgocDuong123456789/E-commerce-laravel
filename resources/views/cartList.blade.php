@@ -16,7 +16,7 @@
                         <h5>{{$item->description}}</h5>
                     </div>
                 </a>
-                <button class="btn btn-primary">Remove to Cart</button>
+                <a  href="/removecart/{{$item->cart_id}}" class="btn btn-primary">Remove to Cart</a>
             </div>
             @endforeach
         </div>

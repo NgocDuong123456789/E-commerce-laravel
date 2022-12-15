@@ -19,3 +19,4 @@ Route::get('/logout', function () {
 });
 
 Route::get('/cartList', [ProductController::class, 'cartList']);
+Route::get('removecart/{cart_id}', [ProductController::class, 'removeCart']);
