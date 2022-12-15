@@ -9,10 +9,9 @@
 </head>
 <body>
     {{View::make('header')}}
-    <div class="container custom-login">
-        <div class="row">
-            <div class="col-sm-4 col-sm-offset-4"> @yield("content")</div>
-        </div>
+   
+                 @yield("content")
+        
        
     </div>
    
@@ -22,6 +21,14 @@
     .custom-login{
         height:500px;
         padding-top:100px;
+    }
+    img.slider-img{
+        height:400px !important;
+        width:100%;
+    }
+    .custom-product{
+        height:600px;
+
     }
 </style>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

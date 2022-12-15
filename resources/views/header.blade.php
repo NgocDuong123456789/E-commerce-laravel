@@ -1,3 +1,11 @@
+<?php 
+ use App\Http\Controllers\ProductController;
+ $total=0;
+ if(session()->has('user')){
+  $total=ProductController::cartItem();
+ }
+
+?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">E-commerce</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,10 +21,22 @@
           <a class="nav-link" href="#">Orders</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Cart(0)</a>
+            <a class="nav-link" href="#">Cart({{$total}})</a>
           </li>
-   
-       
+          @if(session()->has('user'))
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{Session::get('user')['userName']}}
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/logout">logout</a></li>
+             
+            </ul>
+          </li>
+          @else
+          <li class="nav-item">
+            <a class="nav-link" href="/login">login</a>
+          </li>
+          @endif
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
