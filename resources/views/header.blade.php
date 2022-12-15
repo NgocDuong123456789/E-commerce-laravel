@@ -21,7 +21,7 @@
           <a class="nav-link" href="#">Orders</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Cart({{$total}})</a>
+            <a class="nav-link" href="/cartList">Cart({{$total}})</a>
           </li>
           @if(session()->has('user'))
           <li class="dropdown">
